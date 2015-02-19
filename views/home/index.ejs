@@ -1,0 +1,40 @@
+<div class="container" ng-controller="TabsWrapperCtrl">
+  <tabset>
+    <tab heading="Sports">
+        <% if(news == null || news.length === 0){ %>
+          <p>No news to display</p>
+        <% } else { %>
+          <div id="divSportsNewsContainter">
+            <% news.forEach(function(headline) { %>
+              <div class="heading row"><a class="col-xs-12" href="<%= headline.link %>"><%= headline.title %></a></div>
+            <% }); %>
+          </div>
+        <% } %>
+        <button class='btn btn-default' ng-click="loadSportNews(true)">Refresh</button>
+    </tab>
+    
+    <tab heading="Entertainment" select="loadEntertainmentNews(false)">
+      <div>  
+        <img class="spinner" id="imgSpinnerTab2" src="images/spinner1.gif" ng-show="loadingTab2" />
+      </div>
+      <div id="divEntertainmentNewsContainter">
+        <div class="heading row" ng-class-odd="'odd'" ng-class-even="'even'" ng-repeat="item in entertainmentNews">
+          <a class="col-xs-12" href="{{item.link}}">{{item.title}}</a>
+        </div>
+      </div>
+      <button class='btn btn-default' ng-click="loadEntertainmentNews(true)">Refresh</button>
+    </tab>
+
+    <tab heading="Tech" select="loadTechNews(false)">
+      <div>  
+        <img class="spinner" id="imgSpinnerTab3" src="images/spinner1.gif" ng-show="loadingTab3" />
+      </div>
+      <div id="divTechNewsContainter">
+        <div class="heading row" ng-repeat="item in techNews">
+          <a class="col-xs-12" href="{{item.link}}">{{item.title}}</a>
+        </div>
+      </div>
+      <button class='btn btn-default' ng-click="loadTechNews(true)">Refresh</button>
+    </tab>
+  </tabset>
+</div>

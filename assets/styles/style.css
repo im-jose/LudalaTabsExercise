@@ -1,0 +1,12 @@
+/* Custom Styles */
+
+
+div.heading:nth-child(even) { background-color: #eee; }
+
+div.heading a{ display:inline-block; width: 100%; padding:10px 15px;}
+
+div.heading{ margin: 0 15px;}
+
+img.spinner{ position: absolute; left: 50%; margin-left:-16px; margin-top: 20px; margin-bottom: 10px; }
+
+button.btn{ margin: 10px 20px;}
