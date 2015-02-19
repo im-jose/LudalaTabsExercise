@@ -1,7 +1,3 @@
-# NewsServer
-
-a [Sails](http://sailsjs.org) application
-=======
 # LudalaTabsExercise
 SailsJS &amp; AngularJS integration
 
